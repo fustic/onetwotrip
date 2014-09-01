@@ -12,7 +12,7 @@ This SPA must consist of three simple pages:
   
 The website content doesn’t matter. 
 Pages must have common header with menu bar, which contains following sets of items that depend on user’s auth state:
-  • for anonymous user: Main, Contacts and 'Sign in' links;
-  • for authorised user: Main, Contacts, Admin links and 'Sign out' button.
+  - for anonymous user: Main, Contacts and 'Sign in' links;
+  - for authorised user: Main, Contacts, Admin links and 'Sign out' button.
   
 'Sign in’ link opens auth form as an overlay. After successful credentials is entered, user must be redirected to Admin page. Entering the Admin page by anonymous user causes redirection to Main page with displayed auth form.
