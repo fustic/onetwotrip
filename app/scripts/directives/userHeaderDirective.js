@@ -8,21 +8,23 @@
       return {
         restrict: 'E',
         templateUrl: 'views/header.html',
-        controller: function ($location, MessageBusService, AuthService) {
-          var channel = MessageBusService.getChannel('auth');
-          this.isAuthorized = AuthService.isAuthorized();
+        controller: ['$location', 'MessageBusService', 'AuthService',
+          function ($location, MessageBusService, AuthService) {
+            var channel = MessageBusService.getChannel('auth');
+            this.isAuthorized = AuthService.isAuthorized();
 
-          this.signOut = function signOut() {
-            channel.publish('signOut');
-            $location.path('/');
-            this.isAuthorized = false;
-          };
+            this.signOut = function signOut() {
+              channel.publish('signOut');
+              $location.path('/');
+              this.isAuthorized = false;
+            };
 
-          channel.subscribe('user.authorized', function callback() {
-              this.isAuthorized = true;
-            }.bind(this)
-          );
-        },
+            channel.subscribe('user.authorized', function callback() {
+                this.isAuthorized = true;
+              }.bind(this)
+            );
+          }
+        ],
         controllerAs: 'user'
       };
     });

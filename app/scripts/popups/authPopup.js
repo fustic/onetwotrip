@@ -7,7 +7,7 @@
           $modal.open({
             templateUrl: 'views/authpopup.html',
             windowClass: 'authpopup',
-            controller: function controller($scope, $modalInstance) {
+            controller: ['$scope', '$modalInstance', function controller($scope, $modalInstance) {
               $scope.credentials = {};
               $scope.message = '';
               $scope.close = function () {
@@ -24,7 +24,7 @@
                   }
                 );
               };
-            }
+            }]
           });
         }
 

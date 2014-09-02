@@ -40,18 +40,20 @@
             templateUrl: 'views/admin.html',
             resolve: {
               //can not enter this state without auth
-              auth: function($q, $timeout, $location, AuthService, AuthPopup){
-                var deferred = $q.defer();
-                if (AuthService.isAuthorized()) {
-                  $timeout(function() {
-                    deferred.resolve();
-                  }, 10);
-                } else {
-                  AuthPopup.render();
-                  $location.path('/');
+              auth: ['$q', '$timeout', '$location', 'AuthService', 'AuthPopup',
+                function($q, $timeout, $location, AuthService, AuthPopup){
+                  var deferred = $q.defer();
+                  if (AuthService.isAuthorized()) {
+                    $timeout(function() {
+                      deferred.resolve();
+                    }, 10);
+                  } else {
+                    AuthPopup.render();
+                    $location.path('/');
+                  }
+                  return deferred.promise;
                 }
-                return deferred.promise;
-              }
+              ]
             }
           });
       }
