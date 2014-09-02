@@ -1,8 +1,8 @@
 (function (module) {
   'use strict';
   module
-    .service('AuthService', ['$q', '$timeout', 'MessageBusService',
-      function AuthService($q, $timeout, MessageBusService) {
+    .service('AuthService', ['$q', 'MessageBusService',
+      function AuthService($q, MessageBusService) {
         var
           channel = MessageBusService.getChannel('auth'),
           sessionTokenID = 'oneTwoTrip.auth.token',
@@ -61,19 +61,17 @@
             var
               deferred = $q.defer();
 
-            $timeout(function () {
-              if (email === credentials.email && password === credentials.password) {
-                isUserAuthorized = true;
-                saveToSessionStorage(sessionTokenID, user);
-                publishUserAuthed();
-                deferred.resolve();
-              } else {
-                isUserAuthorized = false;
-                saveToSessionStorage(sessionTokenID, null);
-                publishUserSignedOut();
-                deferred.reject();
-              }
-            }, 10);
+            if (email === credentials.email && password === credentials.password) {
+              isUserAuthorized = true;
+              saveToSessionStorage(sessionTokenID, user);
+              publishUserAuthed();
+              deferred.resolve();
+            } else {
+              isUserAuthorized = false;
+              saveToSessionStorage(sessionTokenID, null);
+              publishUserSignedOut();
+              deferred.reject();
+            }
 
             return deferred.promise;
           },

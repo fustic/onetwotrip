@@ -8,8 +8,7 @@
     .run(['$rootScope', '$state', '$stateParams',
         function ($rootScope,   $state,   $stateParams) {
 
-          // It's very handy to add references to $state and $stateParams to the $rootScope
-          // so that you can access them from any scope within your applications.For example,
+          // to be able state in any scope in applications. For example,
           // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
           // to active whenever 'contacts.list' or one of its decendents is active.
           $rootScope.$state = $state;
@@ -40,13 +39,11 @@
             templateUrl: 'views/admin.html',
             resolve: {
               //can not enter this state without auth
-              auth: ['$q', '$timeout', '$location', 'AuthService', 'AuthPopup',
-                function($q, $timeout, $location, AuthService, AuthPopup){
+              auth: ['$q', '$location', 'AuthService', 'AuthPopup',
+                function($q, $location, AuthService, AuthPopup){
                   var deferred = $q.defer();
                   if (AuthService.isAuthorized()) {
-                    $timeout(function() {
-                      deferred.resolve();
-                    }, 10);
+                    deferred.resolve();
                   } else {
                     AuthPopup.render();
                     $location.path('/');
