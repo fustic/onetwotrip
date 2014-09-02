@@ -3,7 +3,7 @@
 describe('Service: Authservice', function () {
 
   // load the service's module
-  beforeEach(module('oneTwoTripTestApp'));
+  beforeEach(module('oneTwoTrip'));
 
   // instantiate service
   var Authservice;

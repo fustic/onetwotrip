@@ -3,7 +3,7 @@
 describe('Directive: UserHeader', function () {
 
   // load the directive's module
-  beforeEach(module('oneTwoTripTestApp'));
+  beforeEach(module('oneTwoTrip'));
 
   var element,
     scope;

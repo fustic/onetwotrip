@@ -23,6 +23,7 @@
         }
 
         channel.subscribe('signOut', signOut);
+
         function publishUserAuthed() {
           channel.publish('user.authorized', user);
         }
