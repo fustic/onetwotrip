@@ -1,4 +1,4 @@
-(function (module) {
+(function (module, postal) {
   'use strict';
   module
     .service('MessageBusService',
@@ -34,5 +34,5 @@
         };
       }
     );
-})(angular.module('oneTwoTrip'));
+})(angular.module('oneTwoTrip'), postal);
 
