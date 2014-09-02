@@ -1,6 +1,6 @@
 {
   "name": "onetwotriptest",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "test task for oneTwoTrip: basic single-page application with auth mechanism",
   "repository": {
     "type": "git",
