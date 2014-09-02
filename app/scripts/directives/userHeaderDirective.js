@@ -8,12 +8,13 @@
       return {
         restrict: 'E',
         templateUrl: 'views/header.html',
-        controller: function (MessageBusService, AuthService) {
+        controller: function ($location, MessageBusService, AuthService) {
           var channel = MessageBusService.getChannel('auth');
           this.isAuthorized = AuthService.isAuthorized();
 
           this.signOut = function signOut() {
             channel.publish('signOut');
+            $location.path('/');
             this.isAuthorized = false;
           };
 
