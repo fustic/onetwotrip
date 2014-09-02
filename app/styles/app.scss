@@ -1,0 +1,94 @@
+$HEADER_BACKGROUND_COLOR: #1b1f23;
+$COLORS_WHITE: #ffffff;
+$COLORS_GRAY: #eee;
+.navbar {
+  font-size: 16px;
+  min-height: 53px;
+  margin-bottom: 30px;
+  border: none;
+//  border-radius: 6px;
+
+  .brand {
+    padding: 23px 28px 24px 0;
+    float: left;
+  }
+  .nav > li {
+    float: left;
+  }
+  .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+body {
+  background: $COLORS_GRAY;
+  color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+
+}
+body > .container {
+  margin-top: 80px;
+}
+.header-10 {
+  z-index: 100;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 80px;
+  background: $HEADER_BACKGROUND_COLOR;
+  color: $COLORS_WHITE;
+
+  .navbar {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    margin: 0;
+
+    .brand {
+      padding-top: 25px;
+      font-size: 25px;
+      color: #ffffff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 600;
+    }
+    .nav > li {
+      margin-left: 30px;
+      a {
+        padding: 29px 0 27px;
+        font-size: 17px;
+        font-weight: 600;
+        color: $COLORS_WHITE;
+      }
+    }
+  }
+}
+
+ul.contacts {
+  li {
+    margin-bottom: 10px;
+  }
+  a {
+    display: inline-block;
+    background: url('../images/social-logos.png') no-repeat;
+    height: 30px;
+    padding-left: 36px;
+    padding-top: 5px;
+
+    span {
+      display: inline-block;
+      height: 30px;
+      margin-top: -6px;
+      padding-top: 5px;
+      background: $COLORS_GRAY;
+    }
+  }
+
+  a.em {
+    background-position-x: -235px;
+  }
+  a.tw {
+    background-position-x: -58px;
+  }
+}

@@ -1,36 +1,21 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
+
+<h2>This is assignment for OneTwoTrip made by Vadim Ivanov</h2>
+Company website as a basic single-page application with auth mechanism.
+<h3>Description</h3>
+This SPA must consist of three simple pages:
+  <ul>
+    <li>main page;</li>
+    <li>contacts page;</li>
+    <li>administrative dashboard.</li>
   </ul>
-  <h3 class="text-muted">OneTwoTripTest</h3>
-</div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+The website content doesn’t matter. Pages must have common header with menu bar, which contains following sets of items that depend on user’s auth state:
+  <ul>
+    <li>for anonymous user: Main, Contacts and 'Sign in' links;</li>
+    <li>for authorised user: Main, Contacts, Admin links and 'Sign out' button.</li>
+  </ul>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+'Sign in’ link opens auth form as an overlay. After successful credentials is entered, user must be redirected to Admin page. Entering the Admin page by anonymous user causes redirection to Main page with displayed auth form.
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
-
-<div class="footer">
-  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-</div>
+<h3>Technical details</h3>
+You have to implement this very basic app applying MVC or similar approach. Our front- end team uses Ember.js, ember-cli and LESS but you are open to demonstrate your favourite technologies and frameworks. Validation of credentials can be done on client side—this task doesn’t require any server side development.
