@@ -1,6 +1,6 @@
 {
   "name": "one-two-trip-test",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "dependencies": {
     "angular": "1.2.23",
     "json3": "~3.2.6",
